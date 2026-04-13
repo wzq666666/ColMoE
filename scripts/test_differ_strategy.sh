@@ -1,0 +1,1 @@
+HOT_SWITCH=0 bash run_strategy_experiment.sh --strategies "static io_free token_reroute" --num-requests 5

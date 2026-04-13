@@ -1,0 +1,1 @@
+screen -S sglang -dm bash scripts/start_SGLang_MoE_Col_with_Hook.sh

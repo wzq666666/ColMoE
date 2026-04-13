@@ -1,0 +1,43 @@
+capture_bs:
+- 1
+- 2
+- 4
+- 8
+cpu_cache_max_experts: 64
+disable_deferral: true
+dynamic_scheduling: true
+enable: true
+enable_cpu_weight_cache: true
+enable_pinned_memory: false
+gate:
+  device: null
+  enable: true
+  format: auto
+  model_path: /home/ecnu/disk/wzq/models/Qwen2-57B-A14B-Instruct
+  next_layer_offset: 1
+  patterns:
+  - model.layers.{idx}.mlp.gate.weight
+  - model.layers.{idx}.block_sparse_moe.gate.weight
+  total_layers: null
+hf_model_path: /home/ecnu/disk/wzq/models/Qwen2-57B-A14B-Instruct
+log_level: 3
+log_path: /home/ecnu/disk/wzq/logs/moe_hook.log
+max_gpu_experts_per_layer: 10
+model_path: /home/ecnu/disk/wzq/models/Qwen2-57B-A14B-Instruct
+num_transfer_streams: 2
+pinned_pool_size: 64
+predict:
+  enable: true
+  mode: fate
+prefetch:
+  enable: false
+  mode: layer
+preload:
+  cache_ratio: 0.2
+  enable: true
+  mode: average
+reroute_alpha: 0.1
+dominance_threshold: 1     
+max_gpu_duplicates: 64
+reroute_strategy: load_aware_token
+scheduling_backend: native
